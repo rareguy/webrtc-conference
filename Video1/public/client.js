@@ -30,7 +30,7 @@ btnGoRoom.onclick = function(){
         roomNumber = inputRoomNumber.value;
         socket.emit('create or join',roomNumber);
         divSelectRoom.style = "display:none;";
-        divConsultingRoom = "display:block;";
+        divConsultingRoom.style = "display:block;";
     }
 };
 
@@ -109,7 +109,7 @@ function onIceCandidate(event){
             id: event.candidate.sdpMid,
             candidate: event.candidate.candidate,
             room: roomNumber
-        })
+        });
     }
 }
 
