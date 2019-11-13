@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>WebRTC Video Conference</title>
+</head>
+<body>
+    <h1>WebRTC Video Conference</h1>
+
+    <div id="selectRoom">
+        <label>Room Number = </label>
+        <input id="roomNumber" type="text" />
+        <button id="goRoom">Go</button>
+    </div>
+
+    <div id="consultingRoom" style="display: none">
+        <video id="localVideo" autoplay></video>
+        <video id="remoteVideo" autoplay></video>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
