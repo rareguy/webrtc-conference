@@ -19,7 +19,7 @@ io.on('connection',function(socket){
             socket.join(room);
             socket.emit('created',room);
         }
-        else if(numClients == 1){
+        else if(numClients = 1){
             socket.join(room);
             socket.emit('joined',room);
         }

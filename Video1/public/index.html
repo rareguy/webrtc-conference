@@ -1,23 +1,37 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>WebRTC Video Conference</title>
+		<title>Video Conference</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	</head>
 	<body>
-		<h1>WebRTC Video Conference</h1>
+		<nav class="navbar navbar-light bg-light">
+		  <span class="navbar-brand mb-0 h1">Video Conference <span id="roomNumberText"></span></span>
+		</nav>
+		<div class="container-fluid">
+			<div id="selectRoom">
+				<form action="#" class="form-inline">
+					<div class="form-group mx-sm-3 mb-2">
+						<label for="roomNumber" style="margin-right:1em;">Room Number</label>
+						<input class="form-control" id="roomNumber" placeholder="1234" type="text" />
+					</div>
+					<input type="button" value=" GO " class="btn btn-primary mb-2" id="goRoom">
+				</form>
+				
+			</div>
 
-		<div id="selectRoom">
-			<label>Room Number = </label>
-			<input id="roomNumber" type="text" />
-			<button id="goRoom">Go</button>
-		</div>
-
-		<div id="consultingRoom" style="display: none">
-			<video id="localVideo" autoplay></video>
-			<video id="remoteVideo" autoplay></video>
+			<div id="consultingRoom" style="display: none">
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+							<video id="localVideo" autoplay></video>
+					</div>
+					<div class="col-md-6 col-sm-12">
+							<video id="remoteVideo" autoplay></video>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<script src="/socket.io/socket.io.js"></script>
